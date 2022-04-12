@@ -12,14 +12,47 @@
         console.log(csvData);
         });></script>
     <style>
-        .bar{
-            fill: navy;
+        .main {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+        }
+
+        p {
+            font-family: -apple-system, sans-serif;
+            width: 60ch;
+        }
+
+        button {
+            display: inline-block;
+            font-family: -apple-system, sans-serif;
+            font-size: 1rem;
+        }
+
+        svg {
+            display: block;
+        }
+
+        text {
+            font-family: -apple-system, sans-serif;
+            font-size: 12px;
+        }
+
+        rect, circle {
+            stroke-linejoin: round;
+        }
+
+        rect.bar-block:hover, circle:hover {
+            stroke-width: 4;
         }
     </style>
 </head>
+<div class="main">
     <p>
         This is my very first try of coursework.
     </p>
+</div>
+    
 
 
 
