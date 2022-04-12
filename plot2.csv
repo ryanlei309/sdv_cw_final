@@ -1,0 +1,85 @@
+date,clade,region,accumulate_region,days
+2019-12-26,19A,Asia,1,0
+2020-01-25,19A,Oceania,2,30
+2020-01-29,19A,North America,3,34
+2020-01-30,19A,Europe,4,35
+2020-02-28,19A,South America,5,64
+2020-08-01,19A,Africa,6,219
+2020-01-22,19B,Asia,1,0
+2020-01-29,19B,Europe,2,7
+2020-02-08,19B,Oceania,3,17
+2020-03-05,19B,North America,4,43
+2020-03-11,19B,South America,5,49
+2020-03-30,19B,Africa,6,68
+2020-02-04,20A,Asia,1,0
+2020-02-06,20A,Africa,2,2
+2020-02-25,20A,Europe,3,21
+2020-03-15,20A,South America,4,40
+2020-03-21,20A,Oceania,5,46
+2020-03-24,20A,North America,6,49
+2020-02-29,20C,North America,1,0
+2020-03-17,20C,Europe,2,17
+2020-03-17,20C,Africa,3,17
+2020-03-19,20C,Oceania,4,19
+2020-03-23,20C,South America,5,23
+2020-06-04,20C,Asia,6,96
+2020-09-28,20G,North America,1,0
+2020-10-04,20G,Asia,2,6
+2020-12-17,20G,Africa,3,80
+2020-12-19,20G,Oceania,4,82
+2021-04-17,21F (Iota),North America,1,0
+2020-12-20,21C (Epsilon),Oceania,1,0
+2021-01-31,21C (Epsilon),Asia,2,42
+2021-02-05,21C (Epsilon),North America,3,47
+2020-11-16,"20H (Beta, V2)",Africa,1,0
+2021-01-18,"20H (Beta, V2)",Europe,2,63
+2021-01-22,"20H (Beta, V2)",Oceania,3,67
+2021-03-30,"20H (Beta, V2)",Asia,4,134
+2020-02-27,20B,Asia,1,0
+2020-02-29,20B,Europe,2,2
+2020-03-13,20B,South America,3,15
+2020-03-16,20B,Africa,4,18
+2020-03-23,20B,Oceania,5,25
+2020-05-26,20B,North America,6,89
+2020-12-21,"20J (Gamma, V3)",South America,1,0
+2021-01-28,"20J (Gamma, V3)",Asia,2,38
+2021-04-27,"20J (Gamma, V3)",North America,3,127
+2020-03-29,20D,Africa,1,0
+2020-04-01,20D,South America,2,3
+2020-04-16,20D,Asia,3,18
+2020-06-16,20D,Europe,4,79
+2020-07-23,20D,Oceania,5,116
+2021-01-20,21G (Lambda),South America,1,0
+2020-06-23,20F,Oceania,1,0
+2020-12-14,"20I (Alpha, V1)",Asia,1,0
+2020-12-18,"20I (Alpha, V1)",Europe,2,4
+2020-12-27,"20I (Alpha, V1)",Africa,3,13
+2020-12-31,"20I (Alpha, V1)",South America,4,17
+2021-01-01,"20I (Alpha, V1)",Oceania,5,18
+2021-02-15,"20I (Alpha, V1)",North America,6,63
+2021-11-23,21M (Omicron),North America,1,0
+2021-11-24,21M (Omicron),Europe,2,1
+2021-11-25,21M (Omicron),Oceania,3,2
+2021-11-26,21M (Omicron),Africa,4,3
+2021-12-08,21M (Omicron),Asia,5,15
+2020-08-03,20E (EU1),Europe,1,0
+2020-10-08,20E (EU1),Oceania,2,66
+2020-12-01,20E (EU1),Africa,3,120
+2021-03-11,21D (Eta),Africa,1,0
+2021-04-20,21D (Eta),Europe,2,40
+2021-04-22,21B (Kappa),Africa,1,0
+2021-01-04,21A (Delta),Africa,1,0
+2021-02-08,21A (Delta),Asia,2,35
+2021-07-28,21A (Delta),North America,3,205
+2021-09-01,21A (Delta),Europe,4,240
+2021-09-15,21A (Delta),Oceania,5,254
+2020-12-17,21I (Delta),Africa,1,0
+2021-05-17,21I (Delta),Asia,2,151
+2021-06-30,21I (Delta),North America,3,195
+2021-07-12,21I (Delta),Oceania,4,207
+2021-09-05,21I (Delta),Europe,5,262
+2021-01-09,21J (Delta),Europe,1,0
+2021-06-09,21J (Delta),Oceania,2,151
+2021-06-17,21J (Delta),Africa,3,159
+2021-06-22,21J (Delta),Asia,4,164
+2021-06-28,21J (Delta),North America,5,170
