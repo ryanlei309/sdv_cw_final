@@ -8,9 +8,20 @@
     <script src="plot2.js"></script>
     <script src="plot3.js"></script>
     <script
-    d3.csv("datasets/plot1.csv".csv", function(data) {
+    let df1 = d3.csv("datasets/plot1.csv", function(data) {
         console.log(csvData);
-        });></script>
+        });>
+    </script>
+    <script
+    let df2 = d3.csv("datasets/plot2.csv", function(data) {
+        console.log(csvData);
+        });>
+    </script>
+    <script
+    let df3 = d3.csv("datasets/plot3.csv", function(data) {
+        console.log(csvData);
+        });>
+    </script>
     <style>
         .main {
             display: flex;
@@ -19,32 +30,10 @@
         }
 
         p {
-            font-family: -apple-system, sans-serif;
+            font-family: -apple-system, 'Times New Roman';
             width: 60ch;
         }
 
-        button {
-            display: inline-block;
-            font-family: -apple-system, sans-serif;
-            font-size: 1rem;
-        }
-
-        svg {
-            display: block;
-        }
-
-        text {
-            font-family: -apple-system, sans-serif;
-            font-size: 12px;
-        }
-
-        rect, circle {
-            stroke-linejoin: round;
-        }
-
-        rect.bar-block:hover, circle:hover {
-            stroke-width: 4;
-        }
     </style>
 </head>
 <div class="main">
