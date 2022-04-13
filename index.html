@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <title>SVM coursework</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <!-- <script src="script/plot1.js"></script>
+    <script src="script/plot1.js"></script>
     <script src="script/plot2.js"></script>
-    <script src="script/plot3.js"></script> -->
+    <script src="script/plot3.js"></script>
     <script
     let df1 = d3.csv("datasets/plot1.csv", function(data) {
-        console.log(Data);
+        console.log(data);
         });>
     </script>
     <script
@@ -18,9 +18,15 @@
         });>
     </script>
     <script
-    let df3 = d3.csv("datasets/plot3.csv", function(data) {
-        console.log(data);
-        });>
+    let df3 = d3.csv("datasets/plot3.csv", functoin(data) {
+        return {
+            clade: data.clade,
+            duration_days: data.duration_days,
+            duration_weeks: data.duratoin_weeks
+        };
+    }, function(error, rows) {
+        console.log(rows);
+    });>
     </script>
     <style>
         .main {
