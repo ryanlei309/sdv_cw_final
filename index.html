@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SVM coursework</title>
+    <title>SVM coursework - Yuan-Chun Lei</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="script/plot1.js"></script>
-    <script src="script/plot2.js"></script>
-    <script src="script/plot3.js"></script>
+    <script src="scripts/plot1.js"></script>
+    <script src="scripts/plot2.js"></script>
+    <script src="scripts/plot3.js"></script>
     <script
     let df1 = d3.csv("datasets/plot1.csv", function(data) {
         console.log(data);
@@ -37,15 +37,51 @@
 
         p {
             font-family: -apple-system, 'Times New Roman';
-            width: 60ch;
+            width: 70ch;
         }
 
     </style>
 </head>
 <div class="main">
+    <p><strong>Hello my friend! This is the third part of the coursework. This website will talk about the details of visulization implementation.</strong></p>
+    <p><strong>How the data is processed:</strong> (This part is not included in the PDF due to space limit.)</p>
+    <p><strong>All the data is preprocessed by python.</strong> The following link is the data preprocess file: <a href = "https://github.com/ryanlei309/sdv_cw_final/blob/main/SDV_data_preprocessing.ipynb"><code>data_preprocess.ipynb</code></a></p>
+    <p><strong>Data source:</strong> <a href="https://nextstrain.org/ncov/open/global"><code>Nextstrain</code></a></p>
+    
+    <svg id = "circle-chart"></svg>
+    
     <p>
-        This is my very first try of coursework.
+        <strong>For the first research question,</strong> a circle chart is created
     </p>
+    
+    <svg id = "line-chart"></svg>
+
+    <p>
+        <strong>For the second research question,</strong> a line chart is created to show the spreading speed of each virus mutation.
+        This project uses Python to do data preprocessing for the second research question. Firstly, save the unique region to an empty 
+        list. Then sort the original data by date in ascending order. Next, loop over each virus clade to filter the original 
+        data frame by clade. Then count how many regions the virus of each clade be collected so far. And count the days' difference 
+        since the date that the clade of the virus was collected. This allows us to know the days that each clade spread from one 
+        region to at least five regions.
+    </p>
+    <p>
+        The x-axis of the line plot is time, and the unit of the time is days. And the y-axis is accumulated regions. The starting point
+        of the y-axis is one, not zero. And each line represents each virus clade. The larger the slope, the faster the virus spread to 
+        each region. 
+    </p>
+
+    <svg id = "bar-chart"></svg>
+
+    <p>
+        <strong>For the third research question,</strong> a horizontal bar chart is created to show the life cycle duration of each virus mutation.
+        The data is preprocessed by using python. Firstly, sort the data by date from the oldest to the latest. Then loop over the data
+        by each clade membership. Then extract the first date and the last date that the virus mutation is being collected and count 
+        the date difference as virus duration days. Afterward, save the virus clade and duration days into each list respectively.
+        Then combine the "clade" list and "duration days" list as a data frame then export as a CSV file. 
+        The x-axis of this bar chart is time and the time unit is days. The y-axis of this bar plot is each virus mutation clade.
+        The longer the bar is, the longer the life duration of the virus is. 
+    </p>
+
 </div>
     
 
