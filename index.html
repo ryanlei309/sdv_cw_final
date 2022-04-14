@@ -5,7 +5,7 @@
     <title>SDV coursework - Yuan-Chun Lei</title>
     <script src="https://unpkg.com/browse/d3@5.7.0/dist/d3.min.js"></script>
     <!-- <script src="scripts/plot1.js"></script> -->
-    <!-- <script src="scripts/plot2.js"></script> -->
+    <script src="scripts/plot2.js"></script>
     <!-- <script type="module" src="scripts/plot3.js" ></script> -->
     <!-- <script
     let df1 = d3.csv("datasets/plot1.csv", function(data) {
@@ -51,7 +51,7 @@
     <svg id = "circle-chart"></svg>
     
     <p>
-        <strong>For the first research question,</strong> a circle chart is created to show the development of virus mutations over time 
+        <strong>For the first research question,</strong> a punch card chart is created to show the development of virus mutations over time 
         and show whether there are seasonal trends in the development of virus mutation. This project uses Python to do data preprocessing
         for this circle chart. Firstly, this project extracted a unique virus clade from the original nextstrain global metadata. Afterward,
         group the original data by "season" and by "clade membership" columns. And since will be some missing values because some virus 
@@ -78,7 +78,7 @@
 
     <svg id = "bar-chart"></svg>
     <script>
-        type = 'module'
+        type = "module"
         import { select, csv, scaleLinear, max, scaleBand, axisLeft, axisBottom, format} from 'd3';
         const w = 920, h = 450
         const xAxisLabelText = 'Days';

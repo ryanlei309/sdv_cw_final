@@ -1,0 +1,12 @@
+.line-path {
+    fill: none;
+    stroke-width: 5;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    mix-blend-mode: multiply;
+}
+
+.tick text{
+    font-size: 1.4rem;
+    fill: #635F5D;
+}
