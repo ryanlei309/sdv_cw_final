@@ -10,7 +10,7 @@ const svg = d3.select("svg#bar-chart")
 
 const svgBarchart = d3.select("svg#bar-chart")
 
-const colorScale = scaleOridinal(schemeSet3.map(color))
+// const colorScale = scaleOridinal(schemeSet3.map(color))
 
 // const width = +svg.attr('width', w);
 // const height = +svg.attr('height', h);
@@ -31,12 +31,16 @@ const render = data => {
       .range([0, innerHeight])
       .padding(0.1);
 
+    const colorScale = scaleOridinal(schemeSet3);
+
     const g = svg.append('g')
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
     g.append('g').call(d3.axisLeft(yScale));
     g.append('g').call(d3.axisBottom(xScale))
       .attr('transform', `translate(0, ${innerHeight})`);
+
+    colorScale.domain(d.map(d => d.clade));
 
     g.selectAll('rect').data(data)
       .enter().append('rect')
