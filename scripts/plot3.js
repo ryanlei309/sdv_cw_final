@@ -21,6 +21,8 @@ const render = data => {
       .domain([0, d3.max(data, xValue)])
       .range([0, innerWidth]);
 
+    console.log(xScale)
+
     const yScale = d3.scaleBand()
       .domain(data.map(yValue))
       .range([0, innerHeight])
