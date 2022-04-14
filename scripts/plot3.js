@@ -5,10 +5,12 @@ const w = 920, h = 450
 const xAxisLabelText = 'Days';
 
 
-const svg = d3.select("svg#bar-chart");
+const svg = d3.select("svg#bar-chart")
+    .attr("viewBox", [0, 0, w, h])
+    .attr("width", w)
 
-const width = +svg.attr('width', w);
-const height = +svg.attr('height', h);
+// const width = +svg.attr('width', w);
+// const height = +svg.attr('height', h);
 
 const render = data => {
     const xValue = d => d.duration_days;

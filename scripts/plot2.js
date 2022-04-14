@@ -5,7 +5,6 @@ const {
     select,
     csv,
     scaleLinear,
-    scaleTime,
     scaleOrdinal,
     extent,
     axisLeft,
@@ -14,7 +13,6 @@ const {
     curveBasis,
     nest,
     schemeCategory10,
-    descending
   } = d3
   
 import { colorLegend } from './colorLegend';
