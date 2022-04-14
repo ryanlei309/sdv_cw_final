@@ -1,4 +1,5 @@
 // Reference: https://www.youtube.com/watch?v=NlBt-7PuaLk&list=WL&index=11&t=15s
+// Reference: https://vizhub.com/curran/326730c80fc54969ae501fb58c8cb94b
 // import { select, csv, scaleLinear, max, scaleBand, axisLeft, axisBottom, format} from 'd3';
 const w = 920, h = 450
 const xAxisLabelText = 'Days';
