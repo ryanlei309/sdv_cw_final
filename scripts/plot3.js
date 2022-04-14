@@ -4,10 +4,12 @@ const { select, csv, scaleLinear, max, scaleBand, axisLeft, axisBottom, format} 
 const width = 920, height = 450
 const xAxisLabelText = 'Days';
 
-
-const svgBarchart = d3.select("svg#bar-chart")
+const svg = d3.select("svg#bar-chart")
     .attr("viewBox", [0, 0, width, height])
     .attr("width", width)
+
+const svgBarchart = d3.select("svg#bar-chart")
+
 
 // const width = +svg.attr('width', w);
 // const height = +svg.attr('height', h);
@@ -28,7 +30,7 @@ const render = data => {
       .range([0, innerHeight])
       .padding(0.1);
 
-    const g = svgBarchart.append('g')
+    const g = svg.append('g')
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
     g.append('g').call(d3.axisLeft(yScale));
