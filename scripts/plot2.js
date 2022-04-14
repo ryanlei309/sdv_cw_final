@@ -16,11 +16,14 @@ const {
   } = d3
   
 import { colorLegend } from './colorLegend';
-const w = 920, h = 450
-const svg = select("svg#line-chart");
+const width = 600, height = 450
 
-const width = +svg.attr('width', w);
-const height = +svg.attr('height', h);
+const svg = d3.select("svg#line-chart")
+    .attr("viewBox", [0, 0, width, height])
+    .attr("width", width)
+
+// const svgLinechart = select("svg#line-chart");
+
 
 const render = data => {
     const xValue = d => d.days;
