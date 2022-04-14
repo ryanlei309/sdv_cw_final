@@ -5,7 +5,7 @@ const width = 920, height = 450
 const xAxisLabelText = 'Days';
 
 
-const svg = d3.select("svg#bar-chart")
+const svgBarchart = d3.select("svg#bar-chart")
     .attr("viewBox", [0, 0, width, height])
     .attr("width", width)
 
