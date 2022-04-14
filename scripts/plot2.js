@@ -17,7 +17,7 @@ const {
     descending
   } = d3
   
-import { colorLegend } from './scripts/colorLegend';
+import { colorLegend } from './colorLegend';
 const w = 920, h = 450
 const svg = select("svg#line-chart");
 
