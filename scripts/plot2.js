@@ -1,7 +1,7 @@
 // Reference: https://vizhub.com/curran/2546209d161e4294802c4ac0098bebc2?edit=files&file=index.js
 // https://www.youtube.com/watch?v=0vKYFsTLtbA&t=901s
 // https://www.youtube.com/watch?v=xFI-us1moj0
-import {
+const {
     select,
     csv,
     scaleLinear,
@@ -15,7 +15,7 @@ import {
     nest,
     schemeCategory10,
     descending
-  } from 'd3';
+  } = d3
   
 import { colorLegend } from './scripts/colorLegend';
 const w = 920, h = 450
