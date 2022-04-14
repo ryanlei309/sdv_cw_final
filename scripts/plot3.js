@@ -1,27 +1,42 @@
 // Reference: https://www.youtube.com/watch?v=NlBt-7PuaLk&list=WL&index=11&t=15s
-import { select, csv, scaleLinear, max, scaleBand} from 'd3';
+import { select, csv, scaleLinear, max, scaleBand, axisLeft, axisBottom, format} from 'd3';
 const w = 920, h = 450
+const xAxisLabelText = 'Days';
+
+
 const svg = select("svg#bar-chart");
 
 const width = +svg.attr('width', w);
 const height = +svg.attr('height', h);
 
 const render = data => {
+    const xValue = d => d.duration_days;
+    const yValue = d => d.clade;
+    const margin = { top: 20, right: 40, bottom: 20, left: 100};
+    const innerWidth = width - margin.left - margin.right;
+    const innerHeight = height - margin.top - margin.bottom;
+    
     const xScale = scaleLinear()
-      .domain([0, max(data, d => d.duration_days)])
-      .range([0, width]);
+      .domain([0, max(data, xValue)])
+      .range([0, innerWidth]);
 
     const yScale = scaleBand()
-      .domain(data.map(d => d.clade))
-      .range([0, height]);
+      .domain(data.map(yValue))
+      .range([0, innerHeight])
+      .padding(0.1);
 
-    console.log(xScale.range());
+    const g = svg.append('g')
+      .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-    svg.selectAll('rect').data(data)
+    g.append('g').call(axisLeft(yScale));
+    g.append('g').call(axisBottom(xScale))
+      .attr('transform', 'translate(0, ${innerHeight})');
+
+    g.selectAll('rect').data(data)
       .enter().append('rect')
-        .attr('y', d => yScale(d.clade))
-        .attr('width', d => xScale(d.duration_days))
-        .attr('height', yScale.bandwidth())
+        .attr('y', d => yScale(yValue(d)))
+        .attr('width', d => xScale(xValue(d)))
+        .attr('height', yScale.bandwidth());
 };
 
 csv('datasets/plot3.csv').then(data => {
