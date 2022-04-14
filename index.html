@@ -77,9 +77,9 @@
     </p>
 
     <svg id = "bar-chart"></svg>
-    <script>
-        type = "module"
-        import { select, csv, scaleLinear, max, scaleBand, axisLeft, axisBottom, format} from 'd3';
+    <script type = "module">
+        
+        const { select, csv, scaleLinear, max, scaleBand, axisLeft, axisBottom, format} = d3
         const w = 920, h = 450
         const xAxisLabelText = 'Days';
 
