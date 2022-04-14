@@ -1,7 +1,7 @@
 // Reference: https://www.youtube.com/watch?v=NlBt-7PuaLk&list=WL&index=11&t=15s
 // Reference: https://vizhub.com/curran/326730c80fc54969ae501fb58c8cb94b
 const { select, csv, scaleLinear, max, scaleBand, axisLeft, axisBottom, format} = d3
-const width = 920, height = 450
+const width = 750, height = 450
 const xAxisLabelText = 'Days';
 
 const svg = d3.select("svg#bar-chart")
