@@ -1,6 +1,6 @@
 // Reference: https://www.youtube.com/watch?v=NlBt-7PuaLk&list=WL&index=11&t=15s
 // Reference: https://vizhub.com/curran/326730c80fc54969ae501fb58c8cb94b
-const { select, csv, scaleLinear, max, scaleBand, axisLeft, axisBottom, format} = d3
+const { select, csv, scaleLinear, max, scaleBand, axisLeft, axisBottom, format, scaleOridinal, schemeSet3, color} = d3
 const width = 600, height = 450
 const xAxisLabelText = 'Days';
 
@@ -10,6 +10,7 @@ const svg = d3.select("svg#bar-chart")
 
 const svgBarchart = d3.select("svg#bar-chart")
 
+const colorScale = scaleOridinal(schemeSet3.map(color))
 
 // const width = +svg.attr('width', w);
 // const height = +svg.attr('height', h);
@@ -41,7 +42,8 @@ const render = data => {
       .enter().append('rect')
         .attr('y', d => yScale(yValue(d)))
         .attr('width', d => xScale(xValue(d)))
-        .attr('height', yScale.bandwidth());
+        .attr('height', yScale.bandwidth())
+        .attr('fill', d => colorScale(d.clade));
 };
 
 d3.csv('datasets/plot3.csv').then(data => {
