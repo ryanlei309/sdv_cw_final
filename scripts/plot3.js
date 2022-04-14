@@ -42,7 +42,7 @@ const render = data => {
 
 d3.csv('datasets/plot3.csv').then(data => {
     data.forEach(d => {
-        d.duration_days = +d.duration_days;
+        d.duration_days = d.duration_days;
     });
     render(data);
 });
