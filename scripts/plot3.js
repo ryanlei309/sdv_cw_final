@@ -15,7 +15,7 @@ const svgBarchart = d3.select("svg#bar-chart")
 const render = data => {
     const xValue = d => d.duration_days;
     const yValue = d => d.clade;
-    const margin = { top: 20, right: 40, bottom: 20, left: 100};
+    const margin = { top: 20, right: 80, bottom: 20, left: 100};
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
     
