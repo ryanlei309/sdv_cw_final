@@ -40,7 +40,7 @@ const render = data => {
     g.append('g').call(d3.axisBottom(xScale))
       .attr('transform', `translate(0, ${innerHeight})`);
 
-    colorScale.domain(d.map(d => d.clade));
+    colorScale.domain(schemeCategory10.map(d => d.clade));
 
     g.selectAll('rect').data(data)
       .enter().append('rect')
