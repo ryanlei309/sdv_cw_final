@@ -28,7 +28,7 @@ const render = data => {
       .range([0, innerHeight])
       .padding(0.1);
 
-    const g = svg.append('g')
+    const g = svgBarchart.append('g')
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
     g.append('g').call(d3.axisLeft(yScale));
