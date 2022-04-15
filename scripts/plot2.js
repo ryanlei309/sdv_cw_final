@@ -128,9 +128,9 @@ const render = data => {
     //   .key(d => d.clade)
     //   .entries(data);
 
-    console.log(nested)
+    // console.log(nested)
 
-    colorScale.domain(nested.map(d => d.key));
+    // colorScale.domain(nested.map(d => d.key));
 
     g.selectAll('.line-path').data(nested)
      .enter().append('path')
@@ -144,13 +144,13 @@ const render = data => {
       .text(title);
 
     svg.append('g')
-      .attr('transform', `translate(790,121)`)
-      .call(colorLegend, {
-        colorScale,
-        circleRadius: 13,
-        spacing: 30,
-        textOffset: 15
-      });
+      .attr('transform', `translate(790,121)`);
+    //   .call(colorLegend, {
+    //     colorScale,
+    //     circleRadius: 13,
+    //     spacing: 30,
+    //     textOffset: 15
+    //   });
 };
 
 
