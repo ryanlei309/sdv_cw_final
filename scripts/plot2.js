@@ -13,6 +13,7 @@ const {
     curveBasis,
     nest,
     schemeCategory10,
+    group
   } = d3
   
 // import { colorLegend } from './colorLegend';
@@ -123,7 +124,7 @@ const render = data => {
       .y(d => yScale(yValue(d)))
       .curve(curveBasis);
 
-    const nested = d3.nest()
+    const nested = d3.group()
       .key(d => d.clade)
       .entries(data);
 
