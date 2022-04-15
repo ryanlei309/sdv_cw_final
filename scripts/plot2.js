@@ -123,7 +123,7 @@ const render = data => {
       .y(d => yScale(yValue(d)))
       .curve(curveBasis);
 
-    const nested = nest()
+    const nested = d3.nest()
       .key(d => d.clade)
       .entries(data);
 
