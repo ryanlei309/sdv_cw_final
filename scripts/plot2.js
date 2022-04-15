@@ -124,13 +124,13 @@ const render = data => {
       .y(d => yScale(yValue(d)))
       .curve(curveBasis);
 
-    const nested = d3.group(data, d => d.clade);
-    //   .key(d => d.clade)
-    //   .entries(data);
+    const nested = nest()
+      .key(d => d.clade)
+      .entries(data);
 
     // console.log(nested)
 
-    // colorScale.domain(nested.map(d => d.key));
+    colorScale.domain(nested.map(d => d.key));
 
     g.selectAll('.line-path').data(nested)
      .enter().append('path')
