@@ -16,7 +16,7 @@ const {
     group
   } = d3
   
-import { colorLegend } from './colorLegend';
+// import { colorLegend } from './colorLegend';
 
 const colorLegend = (selection, props) => {
     const {
@@ -144,13 +144,13 @@ const render = data => {
     //   .text(title);
 
     svg.append('g')
-      .attr('transform', `translate(790,121)`);
-    //   .call(colorLegend, {
-    //     colorScale,
-    //     circleRadius: 13,
-    //     spacing: 30,
-    //     textOffset: 15
-    //   });
+      .attr('transform', `translate(790,121)`)
+      .call(colorLegend, {
+        colorScale,
+        circleRadius: 13,
+        spacing: 30,
+        textOffset: 15
+      });
 };
 
 csv('datasets/plot2.csv').then(data => {
