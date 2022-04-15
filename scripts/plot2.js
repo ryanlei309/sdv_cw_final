@@ -16,39 +16,39 @@ const {
     group
   } = d3
   
-// import { colorLegend } from './colorLegend';
+import { colorLegend } from './colorLegend';
 
-const colorLegend = (selection, props) => {
-    const {
-        colorScale,
-        circleRadius,
-        spacing,
-        textOffset
-    } = props;
+// const colorLegend = (selection, props) => {
+//     const {
+//         colorScale,
+//         circleRadius,
+//         spacing,
+//         textOffset
+//     } = props;
 
-    const groups = selection.selectAll('g')
-        .data(colorScale.domain());
-    const groupsEnter = groups
-        .enter().append('g')
-        .attr('class', 'tick');
-    groupsEnter
-        .merge(groups)
-        .attr('transform', (d, i) =>
-            `translate(0, ${i * spacing})`
-        );
-    groups.exit().remove();
+//     const groups = selection.selectAll('g')
+//         .data(colorScale.domain());
+//     const groupsEnter = groups
+//         .enter().append('g')
+//         .attr('class', 'tick');
+//     groupsEnter
+//         .merge(groups)
+//         .attr('transform', (d, i) =>
+//             `translate(0, ${i * spacing})`
+//         );
+//     groups.exit().remove();
 
-    groupsEnter.append('circle')
-        .merge(groups.select('circle'))
-        .attr('r', circleRadius)
-        .attr('fill', colorScale);
+//     groupsEnter.append('circle')
+//         .merge(groups.select('circle'))
+//         .attr('r', circleRadius)
+//         .attr('fill', colorScale);
 
-    groupsEnter.append('text')
-        .merge(groups.select('text'))
-        .text(d => d)
-        .attr('dy', '0.32em')
-        .attr('x', textOffset)
-};
+//     groupsEnter.append('text')
+//         .merge(groups.select('text'))
+//         .text(d => d)
+//         .attr('dy', '0.32em')
+//         .attr('x', textOffset)
+// };
 
 const width = 600, height = 450
 
@@ -138,8 +138,8 @@ const render = data => {
 
     g.append('text')
       .attr('class', 'title')
-      .attr('y', -10);
-    //   .text(title);
+      .attr('y', -10)
+      .text(title);
 
     svg.append('g')
       .attr('transform', `translate(790,121)`)
@@ -159,63 +159,3 @@ csv('datasets/plot2.csv').then(data => {
     render(data);
 });
 
-// var width = 600, height = 450
-
-// var margin = { top: 60, right: 220, bottom: 88, left: 105};
-// var innerWidth = width - margin.left - margin.right;
-// var innerHeight = height - margin.top -  margin.bottom;
-
-
-// Another versoin for testing!!!!!!!!!!!!!!
-// var margin = {top: 30, right: 20, bottom: 30, left: 50},
-//     width = 600 - margin.left - margin.right,
-//     height = 450 - margin.top - margin.bottom;
-
-// var x = d3.scaleLinear().range([0, width]);
-// var y = d3.scaleLinear().range([height, 0]);
-
-// var dline = d3.line()
-//   .x(function(d) { return x(d.days); })
-//   .y(function(d) { return y(d.accumulate_region); });
-
-// var svg = d3.select("svg#line-chart")
-//   .append("svg")
-//        .attr("width", width + margin.left + margin.right)
-//        .attr("height", height + margin.top + margin.bottom)
-//   .append("g")
-//        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-// d3.csv('datasets/plot2.csv').then(function(data) {
-
-//     data.forEach(function(d) {
-//         d.accumulate_region = +d.accumulate_region;
-//         d.days = +d.days;
-//     });
-
-//     x.domain(d3.extent(data, function(d) { return d.days; }));
-//     y.domain([0, d3.max(data, function(d) { return d.accumulate_region})]);
-
-//     var dataNest = d3.group(data, d => d.clade);
-
-//     var color = d3.scaleOrdinal(d3.schemeCategory10);
-
-//     dataNest.forEach(function(d,i) {
-
-//         svg.append("path")
-//              .attr("class", "line")
-//              .style("stroke", function() {
-//                  return d.color = color(i); })
-//              .attr("d", dline(d.value));
-             
-//     });
-
-//     svg.append("g")
-//       .attr("class", "axis")
-//       .attr("transform", "translate(0," + height + ")")
-//       .call(d3.axisBottom(x));
-
-//     svg.append("g")
-//       .attr("class", "axis")
-//       .call(d3.axisLeft(y));
-    
-// });
