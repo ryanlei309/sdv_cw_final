@@ -128,8 +128,6 @@ const render = data => {
       .key(d => d.clade)
       .entries(data);
 
-    // console.log(nested)
-
     colorScale.domain(nested.map(d => d.key));
 
     g.selectAll('.line-path').data(nested)
