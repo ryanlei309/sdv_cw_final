@@ -124,9 +124,9 @@ const render = data => {
       .y(d => yScale(yValue(d)))
       .curve(curveBasis);
 
-    const nested = d3.group()
-      .key(d => d.clade)
-      .entries(data);
+    const nested = d3.group(data, d => d.clade);
+    //   .key(d => d.clade)
+    //   .entries(data);
 
     console.log(nested)
 
