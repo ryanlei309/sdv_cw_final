@@ -150,7 +150,7 @@ const render = data => {
         .attr("stroke", "darkgray")
 
     legend.selectAll("g.legend-item")
-        .data(data)
+        .data(d.key)
         .enter()
         .append("g").classed("legend-item", true)
         .attr("transform", (_, i) => `translate(${(Math.floor(i / 6) * 100 + 15 )}, ${(i % 6) * 24 + 15})`)
