@@ -1,4 +1,4 @@
-// // Reference: https://vizhub.com/curran/2546209d161e4294802c4ac0098bebc2?edit=files&file=index.js
+// Reference: https://vizhub.com/curran/2546209d161e4294802c4ac0098bebc2?edit=files&file=index.js
 
 export const colorLegend = (selection, props) => {
     const {
