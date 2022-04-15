@@ -139,14 +139,44 @@ const render = data => {
       .attr('class', 'title')
       .attr('y', -10);
 
-    svg.append('g')
-      .attr('transform', `translate(790,121)`)
-      .call(colorLegend, {
-        colorScale,
-        circleRadius: 13,
-        spacing: 30,
-        textOffset: 15
-      });
+    // Legend
+    const legend = svg.append("g").classed("legend", true)
+        .attr("transform", `translate(${margin.left + 20}, ${margin.top + 10})`)
+
+    legend.append("rect")
+        .attr("width", 218)
+        .attr("height", 135 + 16 + 15)
+        .attr("fill", "whitesmoke")
+        .attr("stroke", "darkgray")
+
+    legend.selectAll("g.legend-item")
+        .data(data)
+        .enter()
+        .append("g").classed("legend-item", true)
+        .attr("transform", (_, i) => `translate(${(Math.floor(i / 6) * 100 + 15 )}, ${(i % 6) * 24 + 15})`)
+        .each(function (clade) {
+            const legendItem = d3.select(this)
+
+            legendItem.append("rect")
+                .attr("width", 16)
+                .attr("height", 16)
+                .attr("rx", 2)
+                .attr("fill", colorScale(clade))
+
+            legendItem.append("text")
+                .attr("x", 20)
+                .attr("y", 12)
+                .text(clade)
+        });
+
+    // svg.append('g')
+    //   .attr('transform', `translate(790,121)`)
+    //   .call(colorLegend, {
+    //     colorScale,
+    //     circleRadius: 13,
+    //     spacing: 30,
+    //     textOffset: 15
+    //   });
 };
 
 csv('datasets/plot2.csv').then(data => {
