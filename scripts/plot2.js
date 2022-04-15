@@ -140,8 +140,8 @@ const render = data => {
 
     g.append('text')
       .attr('class', 'title')
-      .attr('y', -10)
-      .text(title);
+      .attr('y', -10);
+    //   .text(title);
 
     svg.append('g')
       .attr('transform', `translate(790,121)`);
