@@ -195,7 +195,7 @@ d3.csv('datasets/plot2.csv').then(function(data) {
     x.domain(d3.extent(data, function(d) { return d.days; }));
     y.domain([0, d3.max(data, function(d) { return d.accumulate_region})]);
 
-    dataNest = d3.group(data, d => d.clade);
+    var dataNest = d3.group(data, d => d.clade);
 
     var color = d3.scaleOrdinal(d3.schemeCategory10);
 
