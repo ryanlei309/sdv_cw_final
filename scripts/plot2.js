@@ -17,7 +17,7 @@ const {
     axis
   } = d3
   
-import { colorLegend } from './colorLegend.js';
+import { colorLegend } from './colorLegend';
 
 // Reference: https://vizhub.com/curran/2546209d161e4294802c4ac0098bebc2?edit=files&file=index.js
 
