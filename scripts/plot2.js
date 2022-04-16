@@ -53,7 +53,7 @@ const colorLegend = (selection, props) => {
         .attr('x', textOffset)
 };
 
-const width = 600, height = 450
+const width = 680, height = 450
 
 const svg = d3.select("svg#line-chart")
     .attr("viewBox", [0, 0, width, height])
@@ -140,8 +140,8 @@ const render = data => {
     g.append('text')
       .attr('class', 'title')
       .attr('y', -10);
-
-    svg.append('g')
+    // 本來是svg
+    g.append('g')
       .attr('transform', `translate(790,121)`)
       .call(colorLegend, {
         colorScale,
