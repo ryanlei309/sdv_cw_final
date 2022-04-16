@@ -79,7 +79,8 @@ const render = data => {
     const yScale = scaleLinear()
       .domain(extent(data, yValue))
       .range([innerHeight, 0])
-      .nice();
+      .nice()
+      .tick(5) // testing;
 
     const colorScale = scaleOrdinal(schemeCategory10);
     
@@ -98,7 +99,6 @@ const render = data => {
     yAxisG.selectAll('.domain').remove();
 
     yAxisG.append('text')
-      .tick(5) // testing
       .attr('class', 'axis-label')
       .attr('y', -65)
       .attr('x', -innerHeight / 2)
