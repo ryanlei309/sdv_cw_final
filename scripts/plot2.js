@@ -77,11 +77,11 @@ const render = data => {
       .range([0, innerWidth])
       .nice();
 
-    const yScale = d3.axis(scaleLinear()
+    const yScale = scaleLinear()
       .domain(extent(data, yValue))
       .range([innerHeight, 0])
-      .nice())
-      .ticks(5) // testing;
+      .nice()
+      .ticks(5); // testing;
 
     const colorScale = scaleOrdinal(schemeCategory10);
     
