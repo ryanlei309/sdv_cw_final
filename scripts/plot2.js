@@ -131,6 +131,16 @@ const render = data => {
 
     colorScale.domain(nested.map(d => d.key));
 
+    // 本來是svg
+    svg.append('g')
+      .attr('transform', `translate(790,121)`)
+      .call(colorLegend, {
+        colorScale,
+        circleRadius: 13,
+        spacing: 30,
+        textOffset: 15
+      });
+
     g.selectAll('.line-path').data(nested)
      .enter().append('path')
       .attr('class', 'line-path')
@@ -140,15 +150,6 @@ const render = data => {
     g.append('text')
       .attr('class', 'title')
       .attr('y', -10);
-    // 本來是svg
-    g.append('g')
-      .attr('transform', `translate(790,121)`)
-      .call(colorLegend, {
-        colorScale,
-        circleRadius: 13,
-        spacing: 30,
-        textOffset: 15
-      });
 };
 
 csv('datasets/plot2.csv').then(data => {
