@@ -80,8 +80,7 @@ const render = data => {
     const yScale = scaleLinear()
       .domain(extent(data, yValue))
       .range([innerHeight, 0])
-      .nice()
-      .ticks(5); // testing;
+      .nice();
 
     const colorScale = scaleOrdinal(schemeCategory10);
     
