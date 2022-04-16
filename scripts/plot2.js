@@ -13,7 +13,8 @@ const {
     curveBasis,
     nest,
     schemeCategory10,
-    group
+    group,
+    axis
   } = d3
   
 import { colorLegend } from './colorLegend.js';
@@ -76,11 +77,11 @@ const render = data => {
       .range([0, innerWidth])
       .nice();
 
-    const yScale = scaleLinear()
+    const yScale = d3.axis(scaleLinear()
       .domain(extent(data, yValue))
       .range([innerHeight, 0])
-      .nice()
-      .tick(5) // testing;
+      .nice())
+      .ticks(5) // testing;
 
     const colorScale = scaleOrdinal(schemeCategory10);
     
