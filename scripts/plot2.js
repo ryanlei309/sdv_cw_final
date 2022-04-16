@@ -101,9 +101,9 @@ const render = data => {
 
     yAxisG.append('text')
       .attr('class', 'axis-label')
-      .attr('y', -65)
+      .attr('y', -35)
       .attr('x', -innerHeight / 2)
-      .attr('fill', 'grey')
+      .attr('fill', 'black')
       .attr('transform', `rotate(-90)`)
       .attr('text-anchor', 'middle')
       .text(yAxisLabel);
@@ -115,9 +115,9 @@ const render = data => {
 
     xAxisG.append('text')
       .attr('class', 'axis-label')
-      .attr('y', 80)
+      .attr('y', 40)
       .attr('x', innerWidth / 2)
-      .attr('fill', 'grey')
+      .attr('fill', 'black')
       .text(xAxisLabel);
 
     const lineGenerator = line()
