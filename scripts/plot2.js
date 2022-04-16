@@ -93,7 +93,8 @@ const render = data => {
     
     const yAxis = axisLeft(yScale)
       .tickSize(-innerWidth)
-      .tickPadding(5); // 10
+      .tickPadding(5) // 10
+      .ticks(5); // testing
 
     const yAxisG = g.append('g').call(yAxis);
     yAxisG.selectAll('.domain').remove();
