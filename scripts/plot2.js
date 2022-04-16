@@ -17,41 +17,41 @@ const {
     axis
   } = d3
   
-import { colorLegend } from './colorLegend';
+// import { colorLegend } from './colorLegend.js';
 
 // Reference: https://vizhub.com/curran/2546209d161e4294802c4ac0098bebc2?edit=files&file=index.js
 
-// const colorLegend = (selection, props) => {
-//     const {
-//         colorScale,
-//         circleRadius,
-//         spacing,
-//         textOffset
-//     } = props;
+const colorLegend = (selection, props) => {
+    const {
+        colorScale,
+        circleRadius,
+        spacing,
+        textOffset
+    } = props;
 
-//     const groups = selection.selectAll('g')
-//         .data(colorScale.domain());
-//     const groupsEnter = groups
-//         .enter().append('g')
-//         .attr('class', 'tick');
-//     groupsEnter
-//         .merge(groups)
-//         .attr('transform', (d, i) =>
-//             `translate(0, ${i * spacing})`
-//         );
-//     groups.exit().remove();
+    const groups = selection.selectAll('g')
+        .data(colorScale.domain());
+    const groupsEnter = groups
+        .enter().append('g')
+        .attr('class', 'tick');
+    groupsEnter
+        .merge(groups)
+        .attr('transform', (d, i) =>
+            `translate(0, ${i * spacing})`
+        );
+    groups.exit().remove();
 
-//     groupsEnter.append('circle')
-//         .merge(groups.select('circle'))
-//         .attr('r', circleRadius)
-//         .attr('fill', colorScale);
+    groupsEnter.append('circle')
+        .merge(groups.select('circle'))
+        .attr('r', circleRadius)
+        .attr('fill', colorScale);
 
-//     groupsEnter.append('text')
-//         .merge(groups.select('text'))
-//         .text(d => d)
-//         .attr('dy', '0.32em')
-//         .attr('x', textOffset)
-// };
+    groupsEnter.append('text')
+        .merge(groups.select('text'))
+        .text(d => d)
+        .attr('dy', '0.32em')
+        .attr('x', textOffset)
+};
 
 const width = 600, height = 450
 
