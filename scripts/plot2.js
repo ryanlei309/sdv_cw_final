@@ -55,7 +55,7 @@ const colorLegend = (selection, props) => {
 
 const width = 680, height = 450
 
-const svg = d3.select("svg#line-chart")
+const svg = select("svg#line-chart")
     .attr("viewBox", [0, 0, width, height])
     .attr("width", width)
 
@@ -132,8 +132,8 @@ const render = data => {
     colorScale.domain(nested.map(d => d.key));
 
     // 本來是svg
-    svg.append('g')
-      .attr('transform', `translate(790,121)`)
+    g.select("svg#line-chart").append('g')
+      .attr('transform', `translate(400,121)`)
       .call(colorLegend, {
         colorScale,
         circleRadius: 13,
