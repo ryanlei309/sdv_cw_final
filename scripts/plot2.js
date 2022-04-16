@@ -132,7 +132,7 @@ const render = data => {
     colorScale.domain(nested.map(d => d.key));
 
     // 本來是svg
-    g.select("svg#line-chart").append('g')
+    g.append('g')
       .attr('transform', `translate(400,121)`)
       .call(colorLegend, {
         colorScale,
