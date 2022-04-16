@@ -91,6 +91,7 @@ const render = data => {
       .tickPadding(15);
     
     const yAxis = axisLeft(yScale)
+      .tick(5)  // testing
       .tickSize(-innerWidth)
       .tickPadding(5); // 10
 
