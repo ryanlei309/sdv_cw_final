@@ -91,7 +91,6 @@ const render = data => {
       .tickPadding(15);
     
     const yAxis = axisLeft(yScale)
-      .tick(5)  // testing
       .tickSize(-innerWidth)
       .tickPadding(5); // 10
 
@@ -99,6 +98,7 @@ const render = data => {
     yAxisG.selectAll('.domain').remove();
 
     yAxisG.append('text')
+      .tick(5) // testing
       .attr('class', 'axis-label')
       .attr('y', -65)
       .attr('x', -innerHeight / 2)
