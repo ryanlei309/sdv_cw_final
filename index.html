@@ -40,9 +40,9 @@
     <p><strong>All the data is preprocessed by python.</strong> The following link is the data preprocess file: <a href = "https://github.com/ryanlei309/sdv_cw_final/blob/main/SDV_data_preprocessing.ipynb"><code>data_preprocess.ipynb</code></a></p>
     <p><strong>Data source:</strong> <a href="https://nextstrain.org/ncov/open/global"><code>Nextstrain</code></a></p>
     
-    <svg id = "circle-chart"></svg>
+    <!-- <svg id = "circle-chart"></svg> -->
     
-    <p>
+    <!-- <p>
         <strong>For the first research question,</strong> a punch card chart is created to show the development of virus mutations over time 
         and show whether there are seasonal trends in the development of virus mutation. This project uses Python to do data preprocessing
         for this circle chart. Firstly, this project extracted a unique virus clade from the original nextstrain global metadata. Afterward,
@@ -53,33 +53,47 @@
         The circle means the amount of the virus mutation to be collected in a season. The larger the circle is, the greater amount of the virus
         mutation is collected.
     </p>
-    
+     -->
     <svg id = "line-chart"></svg>
 
     <p>
-        <strong>For the second research question,</strong> a line chart is created to show the spreading speed of each virus mutation.
-        This project uses Python to do data preprocessing for the second research question. Firstly, save the unique region to an empty 
-        list. Then sort the original data by date in ascending order. Next, loop over each virus clade to filter the original 
-        data frame by clade. Then count how many regions the virus of each clade be collected so far. And count the days' difference 
-        since the date that the clade of the virus was collected. This allows us to know the days that each clade spread from one 
-        region to at least five regions.
-        The x-axis of the line plot is time, and the unit of the time is days. And the y-axis is accumulated regions. The starting point
-        of the y-axis is one, not zero. And each line represents each virus clade. The larger the slope, the faster the virus spread to 
-        each region.
+        <strong>For implementation details of the second research question,</strong> a multiple line chart is created to show the spreading speed 
+        of each virus mutation. This project uses Python to do data preprocessing for the second research question. Firstly, save the unique region 
+        to an empty list. Then sort the original data by date in ascending order. Next, loop over each virus clade to filter the original data frame 
+        by clade. Then count how many regions the virus of each clade be collected so far. And count the days' difference since the date that the 
+        clade of the virus was collected in a new region. This allows us to know the days' difference that each clade spread from one region to at 
+        least five regions. The x-axis of the line plot is time, and the unit of the time is days. And the y-axis is accumulated regions. The starting 
+        point of the y-axis is one, not zero. That is because this research question is about the spreading speed of different virus clades. If 
+        accumulated regions start from 0 to 1, that would be the days' difference of a new virus clade be found, which is not the concern of this 
+        research question. 
+    </p>
+
+    <p>
+        After completing the data process, this project input the CSV file to JavaScript. The file is read using d3.csv(), resulting in a 
+        JavaScript Promise object. And The actual data is a JavaScript array of objects containing two attributes: days and virus clade, and can 
+        be accessed in the .then() function of the Promise. And this project changed the data type of days and accumulated regions from string to integer. 
+        Afterward, using d3.nest() to group the data by clade as key and set the colors of each line by clade. This project changes the unit of 
+        the y-axis to one instead of zero point five. And each line represents each virus clade. The larger the slope, the faster the virus 
+        spread to each region. 
     </p>
 
     <svg id = "bar-chart"></svg>
 
     <p>
-        <strong>For the third research question,</strong> a horizontal bar chart is created to show the life cycle duration of each virus mutation.
-        The data is preprocessed by using python. Firstly, sort the data by date from the oldest to the latest. Then loop over the data
-        by each clade membership. Then extract the first date and the last date that the virus mutation is being collected and count 
-        the date difference as virus duration days. Afterward, save the virus clade and duration days into each list respectively.
-        Then combine the "clade" list and "duration days" list as a data frame then export as a CSV file. 
-        The x-axis of this bar chart is time and the time unit is days. The y-axis of this bar plot is each virus mutation clade.
-        The longer the bar is, the longer the life duration of the virus is. 
+        <strong>For implementation details of the third research question,</strong> a horizontal bar chart is created to show the life duration of 
+        each virus mutation. The data is preprocessed by using python. Firstly, this project sorts the data by date from the oldest to the latest then 
+        loop over the data by each clade membership. Next, this project extracts the first date and the last date that the virus mutation is being 
+        collected and calculates the date difference as virus duration days. Afterward, save the virus clade and duration days into each list respectively 
+        and combine the "clade" list and "duration days" list as a data frame then export as a CSV file. 
     </p>
 
+    <p>
+        After exporting the CSV file from python, this project did the same process as research question two, create a data promise object and use two arrays 
+        to contain the duration days of each virus clade and the unique virus clade. This project changes the data type of duration days from string to integer.
+        The x-axis of this bar chart is time and the time unit is days. The y-axis of this bar plot is each virus mutation clade. The longer the bar is, 
+        the longer the life duration of the virus is. And the color scale of this bar chart is by each virus clade.
+
+    </p>
 </div>
     
 
