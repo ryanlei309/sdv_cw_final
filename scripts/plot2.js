@@ -12,7 +12,7 @@ const {
     line,
     curveBasis,
     nest,
-    schemeCategory10,
+    schemeSpectral,
     schemeSet3,
     group,
     axis
@@ -83,7 +83,7 @@ const render = data => {
       .range([innerHeight, 0])
       .nice();
 
-    const colorScale = scaleOrdinal(schemeSet3);
+    const colorScale = scaleOrdinal(schemeSpectral);
     
     const g = svg.append('g')
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
