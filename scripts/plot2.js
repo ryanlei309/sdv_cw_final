@@ -84,7 +84,7 @@ const render = data => {
       .range([innerHeight, 0])
       .nice();
 
-    const colorScale = scaleOrdinal(schemeCategory20);
+    const colorScale = scaleOrdinal(schemeCategory10);
     
     const g = svg.append('g')
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
