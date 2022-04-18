@@ -62,11 +62,13 @@
         After exporting the CSV file from python, this project did the same process as research question two, create a data promise object and use two arrays 
         to contain the duration days of each virus clade and the unique virus clade. This project changes the data type of duration days from string to integer.
         The x-axis of this bar chart is time and the time unit is days. The y-axis of this bar plot is each virus mutation clade. The longer the bar is, 
-        the longer the life duration of the virus is. And the color scale of this bar chart is by each virus clade.
+        the longer the life duration of the virus is. And the color scale of this bar chart is by each virus clade. 
+        There are two interaction of this bar chart. The first one is a transition, there is a little delay for showing the bar chart. The second interaction 
+        is when user's mouse move to the bar, the bar will be highlighted.
 
     </p>
     
-    <svg id = "line-chart"></svg>
+    <!-- <svg id = "line-chart"></svg>
 
     <p>
         <strong>For implementation details of the second research question,</strong> a multiple line chart is created to show the spreading speed 
@@ -87,7 +89,7 @@
         Afterward, using d3.nest() to group the data by clade as key and set the colors of each line by clade. This project changes the unit of 
         the y-axis to one instead of zero point five. And each line represents each virus clade. The larger the slope, the faster the virus 
         spread to each region. 
-    </p>
+    </p> -->
 
 </div>
     
