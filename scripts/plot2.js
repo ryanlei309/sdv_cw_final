@@ -145,9 +145,9 @@ const render = data => {
     g.selectAll('.line-path').data(nested)
      .enter().append('path')
       .attr('class', 'line-path')
-      .duration(1800)
       .attr('d', d => lineGenerator(d.values))
-      .attr('stroke', d => colorScale(d.key));
+      .attr('stroke', d => colorScale(d.key))
+      .attr('class', 'lines');
 
     g.append('text')
       .attr('class', 'title')
