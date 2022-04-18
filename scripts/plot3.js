@@ -50,7 +50,7 @@ const render = data => {
         .attr('fill', d => colorScale(d.clade))
         .transition()
         .duration(3000)
-        ,attr('width', d => xScale(xValue(d)));
+        .attr('width', d => xScale(xValue(d)));
         // .attr('stroke', d => colorScale(d.clade).darker());
 };
 
