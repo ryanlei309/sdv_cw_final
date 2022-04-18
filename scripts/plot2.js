@@ -16,6 +16,7 @@ const {
     schemeSet3,
     schemeCategory20,
     schemeAccent,
+    schemePaired,
     group,
     axis
   } = d3
@@ -85,7 +86,7 @@ const render = data => {
       .range([innerHeight, 0])
       .nice();
 
-    const colorScale = scaleOrdinal(schemeAccent);
+    const colorScale = scaleOrdinal(schemePaired);
     
     const g = svg.append('g')
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
