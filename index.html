@@ -44,15 +44,14 @@
 </head>
 <div class="main">
     <p><strong>Hello my friend! This is the third part of the coursework. This website will talk about the details of visulization implementation.</strong></p>
-    <p><strong>How the data is processed:</strong> (This part is included in the PDF.)</p>
-    <p><strong>All the data is preprocessed by python.</strong> The following link is the data preprocess file: <a href = "https://github.com/ryanlei309/sdv_cw_final/blob/main/SDV_data_preprocessing.ipynb"><code>data_preprocess.ipynb</code></a></p>
+    <p><strong>All the data is preprocessed by python.</strong> The following link is the data preprocess python file: <a href = "https://github.com/ryanlei309/sdv_cw_final/blob/main/SDV_data_preprocessing.ipynb"><code>data_preprocess.ipynb</code></a></p>
     <p><strong>Data source:</strong> <a href="https://nextstrain.org/ncov/open/global"><code>Nextstrain</code></a></p>
     
     <svg id = "bar-chart"></svg>
-
+    <p>This part is included in the PDF.</p>
     <p>
         <strong>For implementation details of the third research question,</strong> a horizontal bar chart is created to show the life duration of 
-        each virus mutation. The data is preprocessed by using python. Firstly, this project sorts the data by date from the oldest to the latest then 
+        each virus mutation. <strong>How the data is processed:</strong> The data is preprocessed by using python. Firstly, this project sorts the data by date from the oldest to the latest then 
         loop over the data by each clade membership. Next, this project extracts the first date and the last date that the virus mutation is being 
         collected and calculates the date difference as virus duration days. Afterward, save the virus clade and duration days into each list respectively 
         and combine the "clade" list and "duration days" list as a data frame then export as a CSV file. 
