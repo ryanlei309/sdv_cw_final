@@ -45,11 +45,12 @@ const render = data => {
     g.selectAll('rect').data(data)
       .enter().append('rect')
         .attr('y', d => yScale(yValue(d)))
-        .attr('width', d => xScale(xValue(d)))
+        .attr('width', 0)
         .attr('height', yScale.bandwidth())
         .attr('fill', d => colorScale(d.clade))
         .transition()
-        .duration(1500);
+        .duration(3000)
+        ,attr('width', d => xScale(xValue(d)));
         // .attr('stroke', d => colorScale(d.clade).darker());
 };
 
