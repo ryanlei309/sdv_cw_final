@@ -1,6 +1,6 @@
 // Reference: https://www.youtube.com/watch?v=NlBt-7PuaLk&list=WL&index=11&t=15s
 // Reference: https://vizhub.com/curran/326730c80fc54969ae501fb58c8cb94b
-const { select, csv, scaleLinear, max, scaleBand, axisLeft, axisBottom, format, scaleOrdinal, interpolateSpectral, schemeSpectral, schemeCategory10, schemeAccentm, schemeCategory20, color} = d3
+const { select, csv, scaleLinear, max, scaleBand, axisLeft, axisBottom, format, scaleOrdinal, schemePaired, interpolateSpectral, schemeSpectral, schemeCategory10, schemeAccentm, schemeCategory20, color} = d3
 const width = 600, height = 450
 const xAxisLabelText = 'Days';
 
@@ -31,7 +31,7 @@ const render = data => {
       .range([0, innerHeight])
       .padding(0.1);
 
-    const colorScale = scaleOrdinal(schemeCategory10);
+    const colorScale = scaleOrdinal(schemePaired);
 
     const g = svg.append('g')
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
@@ -40,7 +40,7 @@ const render = data => {
     g.append('g').call(d3.axisBottom(xScale))
       .attr('transform', `translate(0, ${innerHeight})`);
 
-    colorScale.domain(schemeCategory10.map(d => d.clade));
+    colorScale.domain(schemePaired.map(d => d.clade));
 
     g.selectAll('rect').data(data)
       .enter().append('rect')
