@@ -48,6 +48,24 @@
     <p><strong>All the data is preprocessed by python.</strong> The following link is the data preprocess file: <a href = "https://github.com/ryanlei309/sdv_cw_final/blob/main/SDV_data_preprocessing.ipynb"><code>data_preprocess.ipynb</code></a></p>
     <p><strong>Data source:</strong> <a href="https://nextstrain.org/ncov/open/global"><code>Nextstrain</code></a></p>
     
+    <svg id = "bar-chart"></svg>
+
+    <p>
+        <strong>For implementation details of the third research question,</strong> a horizontal bar chart is created to show the life duration of 
+        each virus mutation. The data is preprocessed by using python. Firstly, this project sorts the data by date from the oldest to the latest then 
+        loop over the data by each clade membership. Next, this project extracts the first date and the last date that the virus mutation is being 
+        collected and calculates the date difference as virus duration days. Afterward, save the virus clade and duration days into each list respectively 
+        and combine the "clade" list and "duration days" list as a data frame then export as a CSV file. 
+    </p>
+
+    <p>
+        After exporting the CSV file from python, this project did the same process as research question two, create a data promise object and use two arrays 
+        to contain the duration days of each virus clade and the unique virus clade. This project changes the data type of duration days from string to integer.
+        The x-axis of this bar chart is time and the time unit is days. The y-axis of this bar plot is each virus mutation clade. The longer the bar is, 
+        the longer the life duration of the virus is. And the color scale of this bar chart is by each virus clade.
+
+    </p>
+    
     <svg id = "line-chart"></svg>
 
     <p>
@@ -71,23 +89,6 @@
         spread to each region. 
     </p>
 
-    <svg id = "bar-chart"></svg>
-
-    <p>
-        <strong>For implementation details of the third research question,</strong> a horizontal bar chart is created to show the life duration of 
-        each virus mutation. The data is preprocessed by using python. Firstly, this project sorts the data by date from the oldest to the latest then 
-        loop over the data by each clade membership. Next, this project extracts the first date and the last date that the virus mutation is being 
-        collected and calculates the date difference as virus duration days. Afterward, save the virus clade and duration days into each list respectively 
-        and combine the "clade" list and "duration days" list as a data frame then export as a CSV file. 
-    </p>
-
-    <p>
-        After exporting the CSV file from python, this project did the same process as research question two, create a data promise object and use two arrays 
-        to contain the duration days of each virus clade and the unique virus clade. This project changes the data type of duration days from string to integer.
-        The x-axis of this bar chart is time and the time unit is days. The y-axis of this bar plot is each virus mutation clade. The longer the bar is, 
-        the longer the life duration of the virus is. And the color scale of this bar chart is by each virus clade.
-
-    </p>
 </div>
     
 
