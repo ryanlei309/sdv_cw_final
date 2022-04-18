@@ -145,6 +145,10 @@ const render = data => {
     g.selectAll('.line-path').data(nested)
      .enter().append('path')
       .attr('class', 'line-path')
+      .attr('d', 0)
+      .attr('stroke', 0)
+      .transition()
+      .duration(1800)
       .attr('d', d => lineGenerator(d.values))
       .attr('stroke', d => colorScale(d.key));
 
