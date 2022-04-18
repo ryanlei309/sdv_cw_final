@@ -47,7 +47,9 @@ const render = data => {
         .attr('y', d => yScale(yValue(d)))
         .attr('width', d => xScale(xValue(d)))
         .attr('height', yScale.bandwidth())
-        .attr('fill', d => colorScale(d.clade));
+        .attr('fill', d => colorScale(d.clade))
+        .transition()
+        .duration(1500);
         // .attr('stroke', d => colorScale(d.clade).darker());
 };
 
