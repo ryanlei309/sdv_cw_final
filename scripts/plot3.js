@@ -36,7 +36,11 @@ const render = data => {
     const g = svg.append('g')
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-    g.append('g').call(d3.axisLeft(yScale));
+    g.append('g')
+       .call(d3.axisLeft(yScale))
+       .select('.domain, .tick line')
+       .remove();
+       
     g.append('g').call(d3.axisBottom(xScale))
       .attr('transform', `translate(0, ${innerHeight})`);
 
