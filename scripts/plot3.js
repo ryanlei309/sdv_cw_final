@@ -40,9 +40,11 @@ const render = data => {
        .call(d3.axisLeft(yScale))
        .select('.domain, .tick line')
        .remove();
-       
+
     g.append('g').call(d3.axisBottom(xScale))
-      .attr('transform', `translate(0, ${innerHeight})`);
+      .attr('transform', `translate(0, ${innerHeight})`)
+      .select('.domain')
+      .remove();
 
     colorScale.domain(schemePaired.map(d => d.clade));
 
