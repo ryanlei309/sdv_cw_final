@@ -36,16 +36,15 @@ const render = data => {
     const g = svg.append('g')
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-    // const xAxisTickFormat = number =>
-    //   format('.3s')(number)
-    //     .replace('G', 'B');
+    const xAxis = axisBottom(xScale)
+      .tickSize(-innerHeight);
 
     g.append('g')
        .call(d3.axisLeft(yScale))
        .select('.domain, .tick line')
        .remove();
 
-    const xAxisG = g.append('g').call(d3.axisBottom(xScale))
+    const xAxisG = g.append('g').call(xAxis) // d3.axisBottom(xScale)
       .attr('transform', `translate(0, ${innerHeight})`);
 
     xAxisG.select('.domain').remove();
@@ -55,9 +54,6 @@ const render = data => {
       .attr('x', innerWidth / 2)
       .attr('fill', 'black')
       .text('Days');
-
-    const xAxis = axisBottom(xScale)
-      .tickSize(-innerHeight);
 
     colorScale.domain(schemePaired.map(d => d.clade));
 
