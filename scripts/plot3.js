@@ -18,7 +18,7 @@ const svgBarchart = d3.select("svg#bar-chart")
 const render = data => {
     const xValue = d => d.duration_days;
     const yValue = d => d.clade;
-    const margin = { top: 20, right: 40, bottom: 20, left: 100};
+    const margin = { top: 20, right: 40, bottom: 70, left: 100};
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
     
@@ -41,10 +41,16 @@ const render = data => {
        .select('.domain, .tick line')
        .remove();
 
-    g.append('g').call(d3.axisBottom(xScale))
-      .attr('transform', `translate(0, ${innerHeight})`)
-      .select('.domain')
-      .remove();
+    const xAxisG = g.append('g').call(d3.axisBottom(xScale))
+      .attr('transform', `translate(0, ${innerHeight})`);
+
+    xAxisG.select('.domain').remove();
+
+    xAxisG.append('text')
+      .attr('y', 65)
+      .attr('x', innerWidth / 2)
+      .attr('fill', 'black')
+      .text('Days');
 
     colorScale.domain(schemePaired.map(d => d.clade));
 
