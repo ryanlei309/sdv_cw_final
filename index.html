@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <title>SDV coursework - Yuan-Chun Lei</title>
     <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
-    <!-- <script src="scripts/plot1.js"></script> -->
-    <script src="scripts/plot2.js" type ="module"></script>
     <script src="scripts/plot3.js" type="module"></script>
     <style>
         .main {
@@ -66,29 +64,6 @@
         is when user's mouse move to the bar, the bar will be highlighted.
 
     </p>
-    
-    <!-- <svg id = "line-chart"></svg>
-
-    <p>
-        <strong>For implementation details of the second research question,</strong> a multiple line chart is created to show the spreading speed 
-        of each virus mutation. This project uses Python to do data preprocessing for the second research question. Firstly, save the unique region 
-        to an empty list. Then sort the original data by date in ascending order. Next, loop over each virus clade to filter the original data frame 
-        by clade. Then count how many regions the virus of each clade be collected so far. And count the days' difference since the date that the 
-        clade of the virus was collected in a new region. This allows us to know the days' difference that each clade spread from one region to at 
-        least five regions. The x-axis of the line plot is time, and the unit of the time is days. And the y-axis is accumulated regions. The starting 
-        point of the y-axis is one, not zero. That is because this research question is about the spreading speed of different virus clades. If 
-        accumulated regions start from 0 to 1, that would be the days' difference of a new virus clade be found, which is not the concern of this 
-        research question. 
-    </p>
-
-    <p>
-        After completing the data process, this project input the CSV file to JavaScript. The file is read using d3.csv(), resulting in a 
-        JavaScript Promise object. And The actual data is a JavaScript array of objects containing two attributes: days and virus clade, and can 
-        be accessed in the .then() function of the Promise. And this project changed the data type of days and accumulated regions from string to integer. 
-        Afterward, using d3.nest() to group the data by clade as key and set the colors of each line by clade. This project changes the unit of 
-        the y-axis to one instead of zero point five. And each line represents each virus clade. The larger the slope, the faster the virus 
-        spread to each region. 
-    </p> -->
 
 </div>
     
