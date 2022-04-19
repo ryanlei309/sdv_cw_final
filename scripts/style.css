@@ -8,14 +8,14 @@
 
 .tick text{
     font-size: 1.5rem;
-    fill: #635F5D;
+    fill: #635F5D
 }
 
-.tick line {
-    stroke: #C0C0BB;
-  }
+.tick line{
+  stroke: #C0C0BB;
+}
   
-  .axis-label {
+  /* .axis-label {
     font-size: 5em;
     fill: #8E8883;
-  }
+  } */

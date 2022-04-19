@@ -47,10 +47,14 @@ const render = data => {
     xAxisG.select('.domain').remove();
 
     xAxisG.append('text')
-      .attr('y', 65)
+      .attr('y', 50)
       .attr('x', innerWidth / 2)
       .attr('fill', 'black')
       .text('Days');
+
+    const xAxis = axisBottom(xScale)
+      .tickFormat(xAxisTickFormat)
+      .tickSize(-innerHeight);
 
     colorScale.domain(schemePaired.map(d => d.clade));
 
