@@ -51,7 +51,7 @@ const render = data => {
     xAxisG.select('.domain').remove();
 
     xAxisG.append('text')
-      .attr('y', 50)
+      .attr('y', 40)
       .attr('x', innerWidth / 2)
       .attr('fill', 'black')
       .text('Days');
