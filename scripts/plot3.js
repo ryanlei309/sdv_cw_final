@@ -37,8 +37,7 @@ const render = data => {
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
     const xAxis = axisBottom(xScale)
-      .tickSize(-innerHeight)
-      .attr('stroke', '#C0C0BB');
+      .tickSize(-innerHeight);
 
     g.append('g')
        .call(d3.axisLeft(yScale))
