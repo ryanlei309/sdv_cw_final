@@ -37,7 +37,8 @@ const render = data => {
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
     const xAxis = axisBottom(xScale)
-      .tickSize(-innerHeight);
+      .tickSize(-innerHeight)
+      .attr('stroke', '#C0C0BB');
 
     g.append('g')
        .call(d3.axisLeft(yScale))
@@ -45,8 +46,7 @@ const render = data => {
        .remove();
 
     const xAxisG = g.append('g').call(xAxis)
-      .attr('transform', `translate(0, ${innerHeight})`)
-      .attr('stroke', '#C0C0BB');
+      .attr('transform', `translate(0, ${innerHeight})`);
 
     xAxisG.select('.domain').remove();
 
