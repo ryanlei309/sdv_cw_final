@@ -44,8 +44,9 @@ const render = data => {
        .select('.domain, .tick line')
        .remove();
 
-    const xAxisG = g.append('g').call(xAxis) // d3.axisBottom(xScale)
-      .attr('transform', `translate(0, ${innerHeight})`);
+    const xAxisG = g.append('g').call(xAxis)
+      .attr('transform', `translate(0, ${innerHeight})`)
+      .attr('stroke', '#C0C0BB');
 
     xAxisG.select('.domain').remove();
 
